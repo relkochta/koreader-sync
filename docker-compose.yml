@@ -1,0 +1,13 @@
+---
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: mykosync
+    restart: unless-stopped
+    user: $UID:$GID
+    volumes:
+      - ./data:/data
+    ports:
+      - 8080:8080
